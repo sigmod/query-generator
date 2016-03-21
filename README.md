@@ -15,14 +15,15 @@ Then, you can build the query generator:
 
 After building the project with `mvn clean package` a package (`*-binary-assembly*`) is available in the `target` directory.
 The binary package contains a bash script `qgen.sh` that can be used to generate queries from parameterized queries in
-directory "templates".
+directory "templates". You can also add queries into or tweak queries in "templates" to customize the queries you want
+to generate. 
 
-Run the script without arguments to see the parameters:
+Run the script without arguments to generate one suite of test queries:
 
     $cd ./target/query-generator-0.0.1-SNAPSHOT-binary-assembly/
     $bin/qgen.sh
 
-The last command will generate randmized queries in directory "queries".
+The last command will generate randmized queries in the sub-directory "queries".
 You can also add an integer parameter to the command:
 
     $bin/qgen.sh 3
