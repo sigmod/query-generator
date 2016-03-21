@@ -1,3 +1,5 @@
+use test;
+
 select element {
 'uname': user.name,
 'alias': user.alias,

@@ -1,3 +1,5 @@
+use test;
+
 select element avg((
 select element "string-length"(g.message) 
 from GleambookMessages as g

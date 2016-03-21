@@ -39,7 +39,16 @@ public class QGen {
     };
     private static String[] RANGENAMES = { "minute", "hour", "day", "week", "month", "3-months" };
 
-    private static IAppendVisitor admAppendVisitor = new ADMAppendVisitor();
+    private static IAppendVisitor admAppendVisitor = new ADMAppendVisitor() {
+
+        @Override
+        public IAppendVisitor visit(DateTime datetime) {
+            builder.append("datetime(\'");
+            datetime.accept(this);
+            builder.append("\')");
+            return this;
+        }
+    };
     private static IAppendVisitor jsonAppendVisitor = new JsonAppendVisitor();
 
     private static Map<String, Long> prefixToSeedMap = new HashMap<>();
