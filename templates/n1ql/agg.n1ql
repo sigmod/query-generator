@@ -1,0 +1,6 @@
+select avg(length(message)) 
+from gbook_messages
+use index(idxdate using gsi)
+where str_to_millis(send_time) between 
+str_to_millis($1) and str_to_millis($2);
+

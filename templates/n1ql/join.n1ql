@@ -1,0 +1,5 @@
+SELECT users.name, users.alias, message.send_time, message.message
+FROM gbook_messages AS message
+JOIN gbook_users users
+ON KEYS [message.author_id]
+WHERE str_to_millis(message.send_time) BETWEEN str_to_millis($1) AND str_to_millis($2);
