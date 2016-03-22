@@ -23,11 +23,11 @@ import generator.RandomDateGenerator;
 
 public class QueryDateTimeRandomGenerator extends RandomDateGenerator {
 
-    private static long THREE_MONTH = 1000L * 3600 * 24 * 30L * 3 + 1;
+    private static long SIX_MONTH = 1000L * 3600 * 24 * 30L * 6 + 3;
 
     public QueryDateTimeRandomGenerator(Date startDate, Date endDate, long seed) {
         super(startDate, endDate, seed);
-        this.diff = (eDate - sDate - THREE_MONTH) + 1;
+        this.diff = (eDate - sDate - SIX_MONTH) + 1;
     }
 
 }

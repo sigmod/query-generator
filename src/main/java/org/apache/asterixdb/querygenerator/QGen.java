@@ -31,13 +31,14 @@ public class QGen {
     private final static Date endDate = new Date(END_MONTH, END_DAY, END_YEAR);
 
     private static long[] RANGES = { 1000 * 60L, // minute
-            1000 * 3600L, // hour
-            1000 * 3600 * 24L, // day
-            1000 * 3600 * 24 * 7L, // week
-            1000 * 3600 * 24 * 30L, // month
-            1000 * 3600 * 24 * 30L * 3L + 1 // 3 month
+            1000L * 3600L, // hour
+            1000L * 3600 * 24L, // day
+            1000L * 3600 * 24 * 7L, // week
+            1000L * 3600 * 24 * 30L, // month
+            1000L * 3600 * 24 * 30L * 3L + 1, // 3 month
+            1000L * 3600 * 24 * 30L * 6L + 3 // 6 month
     };
-    private static String[] RANGENAMES = { "minute", "hour", "day", "week", "month", "3-months" };
+    private static String[] RANGENAMES = { "minute", "hour", "day", "week", "month", "3-months", "6-months" };
 
     private static IAppendVisitor admAppendVisitor = new ADMAppendVisitor() {
 
