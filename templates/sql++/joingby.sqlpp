@@ -1,4 +1,4 @@
-use test;
+use SocialNetworkData;
 
 select uid as uid, c as count
 from GleambookUsers as user,
