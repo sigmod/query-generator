@@ -1,12 +1,12 @@
 use SocialNetworkData;
 
-select distinct message.message msg
-from   (
+select distinct element message.message
+from   GleambookMessages as message,
+       "word-tokens"(message) as token,
+       (
         select distinct element emp.organization
         from GleambookUsers as user,
              user.employment emp
-       ) as org,
-       GleambookMessages as message,
-       "word-tokens"(message) as token
+       ) as org
 where  org=token
        and message.send_time >= $1 and message.send_time < $2;
