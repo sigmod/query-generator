@@ -1,0 +1,12 @@
+use test;
+
+select element {
+'uname': user.name,
+'alias': user.alias,
+'message': message.message
+}
+from   GleambookUsers as user,
+       user.employment emp,
+       GleambookMessages as message
+where  emp.end_date="get-date-from-datetime"(message.send_time)
+       and message.send_time >= $1 and message.send_time < $2;
