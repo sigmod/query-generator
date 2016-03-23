@@ -2,7 +2,7 @@ use SocialNetworkData;
 
 select distinct element message.message
 from   GleambookMessages as message,
-       "word-tokens"(message) as token,
+       "word-tokens"(message.message) as token,
        (
         select distinct element emp.organization
         from GleambookUsers as user,
